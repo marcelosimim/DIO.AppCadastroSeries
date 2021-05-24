@@ -1,0 +1,15 @@
+/Users/marcelosimim/mrv/DIO.Series/bin/Debug/net5.0/DIO.Series.deps.json
+/Users/marcelosimim/mrv/DIO.Series/bin/Debug/net5.0/DIO.Series.runtimeconfig.json
+/Users/marcelosimim/mrv/DIO.Series/bin/Debug/net5.0/DIO.Series.runtimeconfig.dev.json
+/Users/marcelosimim/mrv/DIO.Series/bin/Debug/net5.0/DIO.Series.dll
+/Users/marcelosimim/mrv/DIO.Series/bin/Debug/net5.0/ref/DIO.Series.dll
+/Users/marcelosimim/mrv/DIO.Series/bin/Debug/net5.0/DIO.Series.pdb
+/Users/marcelosimim/mrv/DIO.Series/obj/Debug/net5.0/DIO.Series.csprojAssemblyReference.cache
+/Users/marcelosimim/mrv/DIO.Series/obj/Debug/net5.0/DIO.Series.GeneratedMSBuildEditorConfig.editorconfig
+/Users/marcelosimim/mrv/DIO.Series/obj/Debug/net5.0/DIO.Series.AssemblyInfoInputs.cache
+/Users/marcelosimim/mrv/DIO.Series/obj/Debug/net5.0/DIO.Series.AssemblyInfo.cs
+/Users/marcelosimim/mrv/DIO.Series/obj/Debug/net5.0/DIO.Series.csproj.CoreCompileInputs.cache
+/Users/marcelosimim/mrv/DIO.Series/obj/Debug/net5.0/DIO.Series.dll
+/Users/marcelosimim/mrv/DIO.Series/obj/Debug/net5.0/ref/DIO.Series.dll
+/Users/marcelosimim/mrv/DIO.Series/obj/Debug/net5.0/DIO.Series.pdb
+/Users/marcelosimim/mrv/DIO.Series/obj/Debug/net5.0/DIO.Series.genruntimeconfig.cache
