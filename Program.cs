@@ -90,26 +90,33 @@ namespace DIO.Series
             Console.Write("Digite o id da série: ");
             int serieIndex = int.Parse(Console.ReadLine());
 
-            foreach (int i in Enum.GetValues(typeof(Genre)))
+            if (serieIndex < repository.List().Count)
             {
-                Console.WriteLine("{0} - {1}", i, Enum.GetName(typeof(Genre), i));
+                foreach (int i in Enum.GetValues(typeof(Genre)))
+                {
+                    Console.WriteLine("{0} - {1}", i, Enum.GetName(typeof(Genre), i));
+                }
+
+                Console.Write("Digite o gênero entre as opções acima: ");
+                int genreIn = int.Parse(Console.ReadLine());
+                Console.Write("Digite o título da série: ");
+                string titleIn = Console.ReadLine();
+                Console.Write("Digite o ano de ínicio da série: ");
+                int yearIn = int.Parse(Console.ReadLine());
+                Console.Write("Digite a descrição da série: ");
+                string descriptionIn = Console.ReadLine();
+
+                Serie updatedSerie = new Serie(id: serieIndex,
+                                            genre: (Genre)genreIn,
+                                            title: titleIn,
+                                            description: descriptionIn,
+                                            year: yearIn);
+                repository.Update(serieIndex, updatedSerie);
             }
-
-            Console.Write("Digite o gênero entre as opções acima: ");
-            int genreIn = int.Parse(Console.ReadLine());
-            Console.Write("Digite o título da série: ");
-            string titleIn = Console.ReadLine();
-            Console.Write("Digite o ano de ínicio da série: ");
-            int yearIn = int.Parse(Console.ReadLine());
-            Console.Write("Digite a descrição da série: ");
-            string descriptionIn = Console.ReadLine();
-
-            Serie updatedSerie = new Serie(id: serieIndex,
-                                        genre: (Genre)genreIn,
-                                        title: titleIn,
-                                        description: descriptionIn,
-                                        year: yearIn);
-            repository.Update(serieIndex, updatedSerie);
+            else
+            {
+                Console.WriteLine("Série não encontrada.");
+            }
         }
         private static void deleteSeries()
         {
@@ -117,13 +124,20 @@ namespace DIO.Series
             int serieIndex = int.Parse(Console.ReadLine());
 
             Console.WriteLine("Tem certeza que deseja excluir?");
-            Console.WriteLine(repository.ReturnById(serieIndex));
             Console.Write("'S' pra sim e 'N' para não: ");
             string answer = Console.ReadLine();
 
             if (answer.ToUpper().Substring(0, 1) == "S")
             {
-                repository.Delete(serieIndex);
+                if (repository.Delete(serieIndex))
+                {
+                    Console.WriteLine("Série deletada com sucesso.");
+                }
+                else
+                {
+                    Console.WriteLine("Série não encontrada. Verifique o ID.");
+                }
+
             }
         }
 
@@ -132,9 +146,16 @@ namespace DIO.Series
             Console.Write("Digite o id da série: ");
             int serieIndex = int.Parse(Console.ReadLine());
 
-            var serie = repository.ReturnById(serieIndex);
+            if (serieIndex < repository.List().Count)
+            {
+                var serie = repository.ReturnById(serieIndex);
 
-            Console.WriteLine(serie);
+                Console.WriteLine(serie);
+            }
+            else
+            {
+                Console.WriteLine("Série não encontrada.");
+            }
         }
         private static string getUserOption()
         {

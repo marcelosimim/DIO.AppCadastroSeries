@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 
 namespace DIO.Series
@@ -5,9 +6,27 @@ namespace DIO.Series
     public class SerieRepository : IRepository<Serie>
     {
         private List<Serie> serieList = new List<Serie>();
-        public void Delete(int id)
+        public bool Delete(int id)
         {
-            serieList.RemoveAt(id);
+            bool deleted = false;
+            int position = 0, count = 0;
+
+            foreach (Serie s in serieList)
+            {
+                if (s.Id == id)
+                {
+                    deleted = true;
+                    position = count;
+                }
+                count++;
+            }
+
+            if (deleted)
+            {
+                serieList.RemoveAt(position);
+            }
+
+            return deleted;
         }
 
         public void Insert(Serie entity)

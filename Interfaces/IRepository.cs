@@ -7,7 +7,7 @@ namespace DIO.Series
         List<T> List();
         T ReturnById(int id);
         void Insert(T entity);
-        void Delete(int id);
+        bool Delete(int id);
         void Update(int id, T entity);
         int nextId();
     }
